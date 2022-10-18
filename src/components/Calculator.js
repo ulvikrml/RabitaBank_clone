@@ -1,12 +1,11 @@
 import React from 'react'
-// import ExchangeRate from './ExchangeRate'
 import LoanCalculator from './LoanCalculator'
-import ExchangeSec from './ExchangeSec'
+// import ExchangeSec from './ExchangeSec'
 const Calculator = () => {
   return (
     <section className='mt-[80px] mb-[80px]'>
-        {/* <LoanCalculator></LoanCalculator> */}
-        <ExchangeSec></ExchangeSec>    
+        <LoanCalculator></LoanCalculator>
+        {/* <ExchangeSec></ExchangeSec>     */}
         </section>
   )
 }
