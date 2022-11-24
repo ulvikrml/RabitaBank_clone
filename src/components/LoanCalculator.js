@@ -5,7 +5,7 @@ const LoanCalculator = () => {
     const [valueAmount, setValueAmount] = useState(300);
     const [valueTerm, setValueTerm] = useState(3);
     const [valuePercentage, setValuePercentage] = useState(12);
-    const [totalAmount, setTotalAmount] = useState(12);
+    const [totalAmount, setTotalAmount] = useState('12.00');
 
     const data = {
         'credit_amount': setValueAmount,
@@ -26,22 +26,20 @@ const LoanCalculator = () => {
             handleTotalAmount(valueAmount, valueTerm, value)
         }
     }
-    // console.log(((300 * 12 / 100) + 300) / 3);
     console.log(valueAmount);
     console.log(valueTerm);
     console.log(valuePercentage);
     const handleTotalAmount = (amount, term, percentage) =>{
-        const value = (((amount * (percentage / 100)).toFixed(2)  + amount) / term ).toFixed(2)
+        const value = (((amount * (percentage / 10)).toFixed(2)  + amount) / term ).toFixed(2);
         console.log(value);
         setTotalAmount(value)
     }
-
     return (
-        <div>
+        <div className='w-full'>
             <h2>Kredit kalkulyatoru</h2>
             <div>
                 <form>
-                    <div className='w-3/5'>
+                    <div className=''>
                         <label htmlFor="credit_amount">Kredit məbləği</label>
                         <h3>{valueAmount}</h3>
                         <InputRange

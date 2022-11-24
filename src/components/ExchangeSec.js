@@ -7,7 +7,7 @@ const ExchangeSec = () => {
     const current = new Date();
     const currentDate = `${current.getDate()}.${current.getMonth() + 1}.${current.getFullYear()}`;
   return (
-    <div>
+    <div className='w-full'>
         {activeExchangeRate ? <ExchangeRate/> : <Conversion/> }
             <div className='flex'>
                 <p>Kurs {currentDate} tarixinə qədər aktivdir.</p>
