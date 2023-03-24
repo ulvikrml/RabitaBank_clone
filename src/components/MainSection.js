@@ -1,8 +1,9 @@
 import React from 'react';
 import Links from './Links';
 import Online from './Online';
-import Calculator from './Calculator';
+import Calculator from './Calculator/Calculator';
 import Banner from './Banner'
+import Footer from './Footer/Footer';
 
 const MainSection = () => {
   return (
@@ -11,6 +12,7 @@ const MainSection = () => {
         <Online></Online>
         <Calculator></Calculator>
         <Banner></Banner>
+        <Footer></Footer>
     </div>
   )
 }

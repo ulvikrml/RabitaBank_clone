@@ -99,22 +99,22 @@ const ExchangeRate = () => {
             <h2 className='text-2xl font-semibold'>Valyuta kursu</h2>
             <button className='border p-3 bg-gray-500' onClick={cashHandler}>{cashActive ? 'Nağdsız' : 'Nağd'}</button>
             </div>
-            <table className='w-3/5 border-collapse'>
+            <table className='w-full table-fixed border-separate border-spacing-y-2'>
                 <thead>
-                    <tr>
+                    <tr className='text-left'>
                         <th>Valyuta</th>
                         <th>Alış</th>
                         <th>Satış</th>
                         <th>Mərkəzi Bank</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className='text-left'>
                     {table.map(e => {
-                        return <tr key={e.id}>
-                            <td className='text-center'>{e.exchange}</td>
-                            <td className='text-center'>{e.buy_amount}</td>
-                            <td className='text-center'>{e.sale_amount}</td>
-                            <td className='text-center'>{e.central_bank}</td>
+                        return <tr className='text-left pt-10' key={e.id}>
+                            <td>{e.exchange}</td>
+                            <td>{e.sale_amount}</td>
+                            <td>{e.buy_amount}</td>
+                            <td>{e.central_bank}</td>
                         </tr>
                     })}
                 </tbody>
