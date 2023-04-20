@@ -9,7 +9,7 @@ import Header from './Header/Header'
 const MainSection = () => {
   return (
     <div className='main-section'>
-      <Header></Header>
+        <Header></Header>
         <Links></Links>
         <Online></Online>
         <Calculator></Calculator>
