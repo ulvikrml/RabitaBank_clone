@@ -2,9 +2,9 @@ import React from 'react'
 
 const FooterMenu = () => {
     return (
-        <div class="flex flex-row justify-between flex-wrap">
-            <div class="w-[16.6%]">
-                <p class="footer-title">Fərdi müştərilər</p>
+        <div className="flex flex-row justify-between flex-wrap">
+            <div className="w-[16.6%]">
+                <p className="footer-title">Fərdi müştərilər</p>
                 <ul>
                     <li><a className='footer-link' href="/">Kartmane</a></li>
                     <li><a className='footer-link' href="/">Kreditlər</a></li>
@@ -13,8 +13,8 @@ const FooterMenu = () => {
                     <li><a className='footer-link' href="/">Kampaniyalar</a></li>
                 </ul>
             </div>
-            <div class="w-[16.6%]">
-                <p class="footer-title">Biznes müştərilər</p>
+            <div className="w-[16.6%]">
+                <p className="footer-title">Biznes müştərilər</p>
                 <ul>
                     <li><a className='footer-link' href="/">Əmanətlər</a></li>
                     <li><a className='footer-link' href="/">Kreditlər</a></li>
@@ -23,8 +23,8 @@ const FooterMenu = () => {
                     <li><a className='footer-link' href="/">Kampaniyalar</a></li>
                 </ul>
             </div>
-            <div class="w-[16.6%]">
-                <p class="footer-title">Bank haqqında</p>
+            <div className="w-[16.6%]">
+                <p className="footer-title">Bank haqqında</p>
                 <ul>
                     <li><a className='footer-link' href="/">Ümumi məlumat</a></li>
                     <li><a className='footer-link' href="/">Strateji baxış və missiya</a></li>
@@ -33,8 +33,8 @@ const FooterMenu = () => {
                     <li><a className='footer-link' href="/">Risklərin idarə edilməsi</a></li>
                 </ul>
             </div>
-            <div class="w-[16.6%]">
-                <p class="footer-title">Digər</p>
+            <div className="w-[16.6%]">
+                <p className="footer-title">Digər</p>
                 <ul>
                     <li><a className='footer-link' href="/">Yükləmələr və dəstək</a></li>
                     <li><a className='footer-link' href="/">Tender elanları</a></li>
@@ -43,15 +43,15 @@ const FooterMenu = () => {
                     <li><a className='footer-link' href="/">F.A.Q</a></li>
                 </ul>
             </div>
-            <div class="w-[16.6%]">
-                <p class="footer-title">İnsan resursları</p>
+            <div className="w-[16.6%]">
+                <p className="footer-title">İnsan resursları</p>
                 <ul>
                     <li><a className='footer-link' href="/">Ümumi məlumat</a></li>
                     <li><a className='footer-link' href="/">Vakansiyalar</a></li>
                 </ul>
             </div>
-            <div class="w-[16.6%]">
-                <p class="footer-title">Baş ofis</p>
+            <div className="w-[16.6%]">
+                <p className="footer-title">Baş ofis</p>
                 <ul className='flex flex-col'>
                     <li className='footer-title mb-1'><a href="/">Azərbaycan, Bakı şəh., AZ 1010, 28 May küç. 33</a></li>
                     <li className='footer-title mb-1'>Tel.: <a href="/">(994 12) 598 44 88</a></li>
