@@ -4,10 +4,12 @@ import Online from './Online';
 import Calculator from './Calculator/Calculator';
 import Banner from './Banner'
 import Footer from './Footer/Footer';
+import Header from './Header/Header'
 
 const MainSection = () => {
   return (
     <div className='main-section'>
+      <Header></Header>
         <Links></Links>
         <Online></Online>
         <Calculator></Calculator>

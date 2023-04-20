@@ -95,9 +95,16 @@ const ExchangeRate = () => {
 
     return (
         <div>
-            <div className='flex mb-2 items-center'>
-            <h2 className='text-2xl font-semibold'>Valyuta kursu</h2>
-            <button className='border p-3 bg-gray-500' onClick={cashHandler}>{cashActive ? 'Nağdsız' : 'Nağd'}</button>
+            <div className='flex mb-2 items-center justify-between'>
+                <h2 className='text-2xl font-semibold'>Valyuta kursu</h2>
+                <div className='flex'>
+                    <p className='pr-3'>Nağdsız</p>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" className="sr-only peer" onClick={cashHandler} />
+                        <div class="w-8 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-black peer-checked:after:translate-x-[0.9rem] peer-checked:after:border-white after:content-[''] after:absolute after:top-[7px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-2.5 after:w-2.5 after:transition-all dark:border-gray-600"></div>
+                    </label>
+                    <p className='pl-3' >Nağd</p>
+                </div>
             </div>
             <table className='w-full table-fixed border-separate border-spacing-y-2'>
                 <thead>

@@ -11,15 +11,15 @@ const Conversion = () => {
   const [amountTo, setAmountTo] = useState(1.87)
   const [exchangeRate, setExchangeRate] = useState(1)
 
-  useEffect(() => {
-    fetch(`https://api.apilayer.com/fixer/convert?to=${toCurrency}&from=${fromCurrency}&amount=1&apikey=H6JuCTlxDYhwtIfzHVArKAArWqAGSyGz`)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setExchangeRate(data.info.rate)
-      })
-    console.log('useEffect');
-  }, [fromCurrency, toCurrency])
+  // useEffect(() => {
+  //   fetch(`https://api.apilayer.com/fixer/convert?to=${toCurrency}&from=${fromCurrency}&amount=1&apikey=H6JuCTlxDYhwtIfzHVArKAArWqAGSyGz`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log(data);
+  //       setExchangeRate(data.info.rate)
+  //     })
+  //   console.log('useEffect');
+  // }, [fromCurrency, toCurrency])
 
   const fromAmountHandler = (e) => {
     setAmountFrom(+(e.target.value))
