@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import CurrencyRow from './CurrencyRow'
 
 const Conversion = () => {
-  // const [result, setResult] = useState('null')
   const [fromCurrency, setFromCurrency] = useState('EUR')
   const [toCurrency, setToCurrency] = useState('AZN')
   const [amountFrom, setAmountFrom] = useState(1)
@@ -10,36 +9,51 @@ const Conversion = () => {
   const [exchangeRate, setExchangeRate] = useState(1)
 
   useEffect(() => {
-    const fetchHandler = () =>{
-      fetch(`https://api.exchangerate.host/latest?base=${fromCurrency}}&symbols=${toCurrency}`)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data.rates[toCurrency]);
+    const fetchHandler = async() => {
+      try {
+        const response = await fetch(`https://api.exchangerate.host/latest?base=${fromCurrency}&symbols=${toCurrency}`)
+        const data = await response.json()  
         setExchangeRate(data.rates[toCurrency])
-      })
+        setAmountTo((amountFrom * data.rates[toCurrency]).toFixed(2));
+      } catch(error) {
+        console.error(error);
+      }
     }
-    fetchHandler()
-      console.log('useEffect');
-      // console.log(exchangeRate);
-      // console.log(fromCurrency);
-  }, [fromCurrency, toCurrency])
+    fetchHandler();
+    console.log('useEffect');
+  }, [fromCurrency, toCurrency]);
 
   const fromAmountHandler = (e) => {
-    let value = +(e.target.value)
-    setAmountFrom(value)
-    setAmountTo((value * exchangeRate).toFixed(2))
-  }
+    let value = e.target.value;
+    if (value === '') {
+      setAmountFrom('');
+      setAmountTo('');
+    } else {
+      value = +value;
+      setAmountFrom(value);
+      setAmountTo(+((value * exchangeRate).toFixed(2)));
+    }
+  };
   const toAmountHandler = (e) => {
-    let value = +(e.target.value)
-    setAmountTo(value)
-    setAmountFrom((value / exchangeRate).toFixed(2))
+    let value = e.target.value;
+    if (value === '') {
+      setAmountFrom('');
+      setAmountTo('');
+    } else {
+      value = +value;
+      setAmountTo(value);
+      setAmountFrom(+((value / exchangeRate).toFixed(2)));
+    }
+  };
+
+  const fromCurrencyHandler = (e) => {
+    const newFromCurrency = e.target.value;
+    setFromCurrency(newFromCurrency);
   }
-  const fromCurrencyHandler = (e) =>{
-    setFromCurrency(e.target.value)
-    setAmountTo((amountFrom / exchangeRate).toFixed(2))
-  }
-  console.log(fromCurrency);
-  console.log(toCurrency);
+  const toCurrencyHandler = (e) => {
+    const newToCurrency = e.target.value;
+    setToCurrency(newToCurrency);
+  };
   return (
     <div>
       <div className='flex mb-2 items-center'>
@@ -47,9 +61,9 @@ const Conversion = () => {
       </div>
       <div className='flex'>
         <form>
-          <CurrencyRow selectedCurrency={fromCurrency} changeCurrency={(e) => fromCurrencyHandler(e)} amount={amountFrom} changeAmount={fromAmountHandler} />
+          <CurrencyRow selectedCurrency={fromCurrency} changeCurrency={fromCurrencyHandler} amount={amountFrom} changeAmount={fromAmountHandler} />
           =
-          <CurrencyRow selectedCurrency={toCurrency} changeCurrency={(e) => setToCurrency(e.target.value)} amount={amountTo} changeAmount={toAmountHandler} />
+          <CurrencyRow selectedCurrency={toCurrency} changeCurrency={toCurrencyHandler} amount={amountTo} changeAmount={toAmountHandler} />
         </form>
       </div>
     </div>

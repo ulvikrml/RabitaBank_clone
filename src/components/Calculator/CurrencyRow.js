@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CurrencyRow = ({changeCurrency, selectedCurrency, amount, changeAmount}) => {
+const CurrencyRow = React.memo(({changeCurrency, selectedCurrency, amount, changeAmount}) => {
   return (
     <div>
         <input type="number" value={amount} onChange={(e)=>changeAmount(e)}/>
@@ -13,6 +13,6 @@ const CurrencyRow = ({changeCurrency, selectedCurrency, amount, changeAmount}) =
         </select>
     </div>
   )
-}
+})
 
 export default CurrencyRow
